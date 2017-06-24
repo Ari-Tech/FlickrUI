@@ -20,3 +20,17 @@ header{
     font-size: 18px;
 
 }
+.togglecls{
+    position: absolute;
+    top: 9px;
+    right: 20px;
+    color: #fff;
+    cursor:pointer;
+}
+.togglecls:hover{
+    color: #000;
+}
+.row .col-md-3{
+    height:200px;
+    background:#efefef;
+}
