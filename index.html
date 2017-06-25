@@ -31,10 +31,10 @@
     
 <div class="togglecls"><i class="{{displayType}}" aria-hidden="true" ng-click="Action.toggleView(this)"></i></div>
 
-        {{flickrdata}}
-        <div class="row">
-        <div class="col-md-4"><img src="https:\/\/farm5.staticflickr.com\/4215\/34663341304_53eb300421_m.jpg"></div><div class="col-md-4"><img src="https:\/\/farm5.staticflickr.com\/4263\/34663341544_14db9d49eb_m.jpg"></div><div class="col-md-4">ec</div>
-        </div>
+<div ng-repeat="i in flickrItems">
+        <w3-test-directive></w3-test-directive>
+</div>
+       <div photo-template></div>
          
 </div>
     

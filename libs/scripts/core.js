@@ -1,10 +1,10 @@
-var feed = '';
-function jsonFlickrFeed(d) {
-    feed = d;
-}
+// var feed = '';
+// function jsonFlickrFeed(d) {
+//     feed = d;
+// }
 //init Angular Code block
-var app = angular.module('flickUIApp',[]);
-app.controller('flickAppController', function ($scope) {
+var app = angular.module('flickUIApp', []);
+app.controller('flickAppController', function ($scope, $http) {
     $scope.pagetitle = "Flickr UI Application";
     $scope.displayType = "fa fa-th-large";
     $scope.Action = {
@@ -16,40 +16,21 @@ app.controller('flickAppController', function ($scope) {
             }
         }
     };
-    
-    $scope.flickrdata = feed;
-    //     var url = "https://api.flickr.com/services/feeds/photos_public.gne?format=json";
-
-    // $http.jsonp(url)
-    //     .success(function(data){
-    //         alert(1)
-    //     }).error(function () {
-    //       alert('error')
-    //     });
-
-    var s = document.createElement("script");
-    s.src = "https://api.flickr.com/services/feeds/photos_public.gne?format=json";
-    document.body.appendChild(s);
-
-    // $scope.flickrdata=feed;
-    //     $http({
-    //         method : "GET",
-    //         url : "https://api.flickr.com/services/feeds/photos_public.gne?format=json"
-    //     }).then(function success(response) {
-    //         $scope.flickrdata = response.data;
-    //         $scope.Action.parsedata(response.data);
-
-    //         function myFunc(myObj) {
-    //   document.getElementById("demo").innerHTML = myObj.name;
-    // }
-
-    //         //formatting jsonp to json 
-    //         console.log(JSON.parse($scope.flickrdata.jsonFlickrFeed()))
-    //     }, function myError(response) {
-    //         $scope.flickrdata = response.statusText;
-    //     });
-
-
+$http.get("https://api.flickr.com/services/feeds/photos_public.gne?format=json&nojsoncallback=1")
+    .then(function(response) {
+        //console.log(response.data)
+        $scope.flickrItems=response.data.items;
+        $scope.count=response.data.items.length;
+        $scope.rows=Math.ceil(response.data.items.length/3);
+        $scope.cols=3;
+        $scope.imageurl=response.data.items[0].media.m;
+        $scope.text=response.data.items[0].title;
+    });
+})
+.directive('photoTemplate', function() {
+  return {
+    templateUrl: 'photo-template.html'
+  };
 });
 
 
