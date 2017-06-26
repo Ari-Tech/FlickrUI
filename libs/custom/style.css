@@ -30,7 +30,20 @@ header{
 .togglecls:hover{
     color: #000;
 }
-.row .col-md-3{
+/*.row .col-md-3{
     height:200px;
     background:#efefef;
+}*/
+.gridlayout{
+    min-height:300px;
+}
+.thumbnail{
+    border:none;
+    box-shadow: 1px 1px 5px 3px #efefef;
+}
+.gridlayout:first-child{
+    margin-top:50px;
+}
+.gridlayout .thumbnail:hover{
+    box-shadow: 1px 1px 10px 5px #ddd;
 }
