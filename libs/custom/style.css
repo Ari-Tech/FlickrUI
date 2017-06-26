@@ -3,15 +3,16 @@ body{
     font-size: 14px;
     min-height:900px;
     height:100%;
-position:relative;
+    position:relative;
+    background:#1abc9c !important;
    }
-   html{
+   html{ 
        height:100%;
    }
 
 header{
-        color: #f3e956;
-    background: #299eb7;
+        color: teal;
+    background: rgba(255,255,255,0.8);
     height: 40px;
     line-height: 40px;
     text-align: center;
@@ -24,9 +25,10 @@ header{
     position: absolute;
     top: 9px;
     right: 20px;
-    color: #fff;
+    color: #e74c3c;
     cursor:pointer;
 }
+
 .togglecls:hover{
     color: #000;
 }
@@ -34,6 +36,13 @@ header{
     height:200px;
     background:#efefef;
 }*/
+.listLayout:first-child{
+     margin-top:30px;
+}
+.listLayout .thumbnail:hover{
+    box-shadow: 1px 1px 6px 4px #3498db;
+    cursor:pointer;
+}
 .gridlayout{
     min-height:300px;
 }
@@ -45,5 +54,12 @@ header{
     margin-top:50px;
 }
 .gridlayout .thumbnail:hover{
-    box-shadow: 1px 1px 10px 5px #ddd;
+    box-shadow: 1px 1px 6px 4px #3498db;
+    cursor:pointer;
+}
+h6{
+    color:teal !important;
+}
+.detailsHolder{
+   border-left: 1px solid #3498db; 
 }

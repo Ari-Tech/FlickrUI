@@ -4,7 +4,7 @@
 // }
 //init Angular Code block
 var app = angular.module('flickUIApp', []);
-app.controller('flickAppController', function ($scope, $http, $compile) {
+app.controller('flickAppController', function ($scope, $http, $compile, $timeout) {
     $scope.pagetitle = "Flickr UI Application";
     $scope.displayType = "fa fa-th-large";
     $scope.Action = {
@@ -63,10 +63,10 @@ app.controller('flickAppController', function ($scope, $http, $compile) {
         });
         }
     };
-    $scope.Action.refreshLayout();
-    // $timeout(function () {
-    //     $scope.Action.refreshLayout();
-    // }, 200);
+   // $scope.Action.refreshLayout();
+    $timeout(function () {
+        $scope.Action.refreshLayout();
+    }, 200);
     
 })
     .directive('photoTemplate', function () {
