@@ -13,16 +13,20 @@ Install Node http server :
 
 
 Once done,
-double click on server.bat and ther application will run on 127.0.0.1:8080
+
+-- *On Windows* 
+
+double click on server.bat and the application will run on 127.0.0.1:8080
 
 Go to browser and type: "http://127.0.0.1:8080/" the UI should load
 
-On mac, Open terminal in Application path:
+-- *On mac*  
 
+Open terminal in Application path:
 
 `cd /ApplicationPath`
 
-`http-server`
+`su <user> ./server.sh`
 
 
 Go to browser and type: `"http://127.0.0.1:8080/"` the UI should load
