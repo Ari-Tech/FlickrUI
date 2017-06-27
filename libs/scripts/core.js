@@ -49,14 +49,18 @@ app.controller('flickAppController', function ($scope, $http, $compile, $timeout
                         //list view
                         for (var i = 0; i < $scope.flickrItems.length; i++) {
                             $scope["data" + i] = $scope.flickrItems[i];
-                            var innerHTML = "<photo-template info='" + "data" + i + "'></photo-template>";
+                            if(i%2===0){
+                               var innerHTML = "<photo-templateright info='" + "data" + i + "'></photo-template>";
+                            }else{
+                                var innerHTML = "<photo-template info='" + "data" + i + "'></photo-template>";
+                            }
                             var newdom = $compile(innerHTML)($scope);
                             angular.element(document.getElementById('photoSection')).append(newdom);
 
                         }
                     }
 
-                    $scope.$apply();
+                   // $scope.$apply();
                 },function(response){
                     //failed - refreshing again
                     $scope.Action.refreshLayout();
@@ -77,6 +81,14 @@ app.controller('flickAppController', function ($scope, $http, $compile, $timeout
             },
             templateUrl: 'photo-template.html'
         };
+    }).directive('photoTemplateright', function () {
+        return {
+            restrict: 'AE',
+            scope: {
+                flickInfo: '=info'
+            },
+            templateUrl: 'photo-templateright.html'
+        };
     }).directive('gridphotoTemplate', function () {
         return {
             restrict: 'AE',
@@ -85,4 +97,30 @@ app.controller('flickAppController', function ($scope, $http, $compile, $timeout
             },
             templateUrl: 'gridphoto-template.html'
         };
-    });
+    }).directive('dateFormat',function($compile){
+        return {
+            restrict: 'AE',
+            link:function(scope, element, attributes){
+                var dt=attributes.datval;
+                dt=new Date(dt);
+                dt=dt.toString();
+                element.html('<i class="fa fa-calendar" aria-hidden="true"></i> :<div>'+dt+'</div>');
+                $compile(element.contents())(scope);
+            }
+           
+        };
+         
+    }).directive('tagFormat',function($compile){
+        return {
+            restrict: 'AE',
+            link:function(scope, element, attributes){
+                var tags=attributes.tags;
+                var tagArr=tags.split(" ");
+                tags=tagArr.join(" | ");
+                element.html('<div>'+tags+'</div>');
+                $compile(element.contents())(scope);
+            }
+           
+        };
+         
+        });

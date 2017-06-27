@@ -10,9 +10,9 @@
     </div>
     <div class="col-md-3 detailsHolder">
       <figure class="highlight">
-      <i class="fa fa-calendar" aria-hidden="true"></i> : {{flickInfo.date_taken}}<br/><br/>
+      <date-Format datval={{flickInfo.date_taken}}></date-Format><br/><br/>
       <i class="fa fa-user" aria-hidden="true"></i> : {{flickInfo.author}}<br/><br/>
-      <i class="fa fa-tags" aria-hidden="true"></i> : {{flickInfo.tags}}
+      <tag-Format tags={{flickInfo.tags}}></tag-Format>
       </figure>
     </div>
   </div>

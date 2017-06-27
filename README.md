@@ -31,3 +31,4 @@ Open terminal in Application path:
 
 Go to browser and type: `"http://127.0.0.1:8080/"` the UI should load
 
+(Please enable CORS in Chrome or whichever browser is being used)

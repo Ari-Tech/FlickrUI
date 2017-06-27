@@ -1,0 +1,19 @@
+<div class="row listLayout">
+  <div class="col-md-1"></div>
+  <div class="col-md-10 thumbnail">
+      <div class="col-md-7 detailsHolder">
+      <figure class="highlight">
+      <date-Format datval={{flickInfo.date_taken}}></date-Format><br/><br/>
+      <i class="fa fa-user" aria-hidden="true"></i> : {{flickInfo.author}}<br/><br/>
+      <tag-Format tags={{flickInfo.tags}}></tag-Format>
+      </figure>
+    </div>
+    <div class="col-md-3">
+      <div><img src="{{flickInfo.media.m}}">
+        <div class="caption">
+          <h6>{{flickInfo.title}}</h6>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
