@@ -57,6 +57,9 @@ app.controller('flickAppController', function ($scope, $http, $compile, $timeout
                     }
 
                     $scope.$apply();
+                },function(response){
+                    //failed - refreshing again
+                    $scope.Action.refreshLayout();
                 });
         }
     };
