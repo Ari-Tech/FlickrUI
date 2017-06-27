@@ -11,7 +11,7 @@ body{
    }
 
 header{
-        color: teal;
+    color: teal;
     background: rgba(255,255,255,0.8);
     height: 40px;
     line-height: 40px;
@@ -22,7 +22,7 @@ header{
 
 }
 .togglecls{
-    position: absolute;
+    position: fixed;
     top: 9px;
     right: 20px;
     color: #e74c3c;
@@ -31,6 +31,16 @@ header{
 
 .togglecls:hover{
     color: #000;
+}
+
+.fa.fa-refresh{
+    position: fixed;
+    top: 9px;
+    right: 50px;
+    color: #e74c3c;
+    cursor:pointer;
+    line-height: 20px;
+    cursor:pointer;
 }
 /*.row .col-md-3{
     height:200px;
